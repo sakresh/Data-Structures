@@ -1,3 +1,3 @@
-# Data Structures in C
+# Data Structures in C & C++
 
-### Learning the basic and advanced Data Structures in the C programming language
+### Learning the basic and advanced Data Structures in the C and C++
