@@ -27,8 +27,18 @@ struct Node* insertAtBeginning(int data){
     return head;
 }
 
-struct Node* insertAtEnd(struct Node* head){
-
+struct Node* insertAtEnd(int data){
+    if(head == NULL){
+        head = createNode(data);
+        return head;
+    }
+    struct Node* newNode = createNode(data);
+    struct Node* temp = head;
+    while(temp->next != NULL){
+        temp = temp->next;
+    }
+    temp->next = newNode;
+    return head;
 }
 
 void traverse(struct Node* head){
@@ -45,5 +55,9 @@ int main(int argc, char **argv){
     insertAtBeginning(20);
     insertAtBeginning(30);
     insertAtBeginning(40);
+    insertAtEnd(100);
+    insertAtEnd(200);
+    insertAtEnd(300);
+    insertAtEnd(400);
     traverse(head);
 }
