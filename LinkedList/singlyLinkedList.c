@@ -41,6 +41,20 @@ struct Node* insertAtEnd(int data){
     return head;
 }
 
+struct Node* deleteAtGivenPosition(int key){
+    if(head == NULL){
+        head = createNode(key);
+    }
+    struct Node* temp = head;
+    while(temp->next->item != key){
+        temp = temp->next;
+    }
+    struct Node* connect = temp->next->next;
+    free(temp->next);
+    temp->next = connect;
+    return head;
+}
+
 void traverse(struct Node* head){
     struct Node* temp = head;
     while(temp != NULL){
@@ -59,5 +73,6 @@ int main(int argc, char **argv){
     insertAtEnd(200);
     insertAtEnd(300);
     insertAtEnd(400);
+    deleteAtGivenPosition(100);
     traverse(head);
 }
