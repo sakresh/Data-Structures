@@ -55,6 +55,7 @@ struct Node* deleteAtGivenPosition(int key){
     return head;
 }
 
+
 void traverse(struct Node* head){
     struct Node* temp = head;
     while(temp != NULL){
